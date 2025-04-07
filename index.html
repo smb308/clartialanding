@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarita Financing - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Petrona:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Petrona', serif;
+        }
+        
+        body {
+            background-color: #0a0a10;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 40px 20px;
+        }
+        
+        .gradient-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #164e63 0%, transparent 70%);
+            opacity: 0.3;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .logo {
+            font-size: 6rem;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(78, 202, 255, 0.6);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        
+        .card-visual {
+            width: 350px;
+            height: 220px;
+            margin: 0 auto 3rem;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.3s;
+        }
+        
+        .card-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #b0e0e6;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.6s;
+        }
+        
+        .description-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #c5c5c5;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1.2s;
+        }
+        
+        .how-it-works {
+            width: 100%;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1.5s;
+        }
+        
+        .how-it-works h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px 20px;
+            width: 150px;
+        }
+        
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(26, 39, 45, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .icon {
+            font-size: 2rem;
+            color: #4fd1c5;
+        }
+        
+        .credit-card-icon {
+            width: 40px;
+            height: 30px;
+            border: 2px solid #4fd1c5;
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        .credit-card-icon::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #4fd1c5;
+        }
+        
+        .step-text {
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .coming-soon {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #4fd1c5;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1.8s;
+        }
+        
+        .early-access {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards 2.1s;
+        }
+        
+        .email-form {
+            display: flex;
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto 4rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards 2.4s;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 1rem;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+        
+        .email-input:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .notify-btn {
+            padding: 15px 30px;
+            border: none;
+            background: linear-gradient(135deg, #36d1dc, #5b86e5);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-left: -50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .notify-btn:hover {
+            transform: translateX(5px);
+            box-shadow: 0 0 15px #36d1dc, 0 0 30px rgba(54, 209, 220, 0.3);
+        }
+        
+        .footer {
+            opacity: 0;
+            animation: fadeIn 1s forwards 2.7s;
+            text-align: center;
+            width: 100%;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #888888;
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 4rem;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            .card-visual {
+                width: 280px;
+                height: 180px;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
+                margin-bottom: 2rem;
+            }
+            
+            .email-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .email-input {
+                width: 100%;
+                margin-bottom: 1rem;
+                border-radius: 50px;
+            }
+            
+            .notify-btn {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gradient-bg"></div>
+        
+        <div class="content">
+            <h1 class="logo">CLARITA</h1>
+            
+            <div class="card-visual">
+                <!-- Replace the src attribute with the path to your uploaded card image -->
+                <img src="carddemo2.png" alt="Clarita Financing Card" width="350">
+            </div>
+            
+            <h2 class="tagline section">Build Credit with Confidence</h2>
+            
+            <p class="description-text section">
+                Our secured credit card helps you establish or improve your credit score with ease. Make a refundable deposit, use your card responsibly, and watch your credit grow.
+            </p>
+            
+            <div class="how-it-works section">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="icon-circle">
+                            <span class="icon">$</span>
+                        </div>
+                        <p class="step-text">Make a deposit</p>
+                    </div>
+                    <div class="step">
+                        <div class="icon-circle">
+                            <div class="credit-card-icon"></div>
+                        </div>
+                        <p class="step-text">Use your card</p>
+                    </div>
+                    <div class="step">
+                        <div class="icon-circle">
+                            <span class="icon">✓</span>
+                        </div>
+                        <p class="step-text">Make on-time payments</p>
+                    </div>
+                    <div class="step">
+                        <div class="icon-circle">
+                            <span class="icon">↑</span>
+                        </div>
+                        <p class="step-text">Upgrade over time</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="coming-soon section">COMING SOON</h3>
+            <p class="early-access section">Be the first to get exclusive early access and special benefits!</p>
+            
+            <form class="email-form section">
+                <input type="email" class="email-input" placeholder="Enter your email">
+                <button type="submit" class="notify-btn">Notify Me</button>
+            </form>
+        </div>
+        
+        <footer class="footer section">
+            © 2025 Clarita Financing. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Fade-in effect for sections when scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            function checkSections() {
+                const triggerBottom = window.innerHeight * 0.8;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Initial check
+            checkSections();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkSections);
+        });
+    </script>
+</body>
+</html>
